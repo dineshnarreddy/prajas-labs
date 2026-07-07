@@ -309,6 +309,78 @@ strong { color: #F0F6FF; }
 }
 .strip-sep { width: 1px; background: var(--b); align-self: stretch; margin: 14px 0; }
 
+/* ── Hero neural network SVG ── */
+.hero-net-wrap {
+    position: absolute;
+    right: max(-60px, calc(50% - 680px));
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+    height: 410px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    animation: net-fade-in 2.2s ease-out 0.9s forwards;
+    will-change: opacity;
+}
+@keyframes net-fade-in {
+    to { opacity: 0.42; }
+}
+.hero-net { width: 100%; height: 100%; }
+
+/* Lines */
+.nl {
+    stroke: rgba(56,189,248,0.4);
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-dasharray: 320;
+    stroke-dashoffset: 320;
+    animation: line-draw 5s ease-in-out infinite;
+    animation-delay: var(--d, 0s);
+}
+@keyframes line-draw {
+    0%   { stroke-dashoffset: 320; opacity: 0.05; }
+    30%  { stroke-dashoffset: 0;   opacity: 0.6;  }
+    70%  { stroke-dashoffset: 0;   opacity: 0.45; }
+    100% { stroke-dashoffset: -320; opacity: 0.05; }
+}
+
+/* Nodes */
+.nn {
+    animation: node-pulse 5s ease-in-out infinite;
+    animation-delay: var(--d, 0s);
+}
+@keyframes node-pulse {
+    0%, 100% { opacity: 0.4; }
+    50%      { opacity: 1;   }
+}
+.nn.hub {
+    opacity: 1;
+    animation: hub-breathe 3s ease-in-out infinite;
+}
+@keyframes hub-breathe {
+    0%, 100% { opacity: 0.85; }
+    50%      { opacity: 1;    }
+}
+.nn.sat { animation-name: sat-pulse; }
+@keyframes sat-pulse {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 0.95; }
+}
+
+/* Hub pulse rings */
+.hr {
+    fill: none;
+    animation: ring-breathe 3s ease-in-out infinite;
+}
+.hr2 { animation-delay: 1s; }
+@keyframes ring-breathe {
+    0%, 100% { opacity: 0.15; }
+    50%      { opacity: 0.55; }
+}
+
+@media (max-width: 1000px) { .hero-net-wrap { display: none; } }
+
 /* ================================================
    MARQUEE
    ================================================ */

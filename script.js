@@ -56,6 +56,29 @@ form.addEventListener('submit', (e) => {
     formNote.textContent = 'Your email client will open. Thank you for reaching out!';
 });
 
+/* ── Count-up animation ── */
+function countUp(el, target, duration) {
+    const start = performance.now();
+    const step = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(ease * target);
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+    };
+    requestAnimationFrame(step);
+}
+const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            countUp(el, parseInt(el.dataset.count, 10), 1400);
+            countObserver.unobserve(el);
+        }
+    });
+}, { threshold: 0.6 });
+document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+
 /* ── Smooth active nav link highlight on scroll ── */
 const sections = document.querySelectorAll('section[id]');
 const links    = document.querySelectorAll('.nav-links a[href^="#"]');

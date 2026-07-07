@@ -391,6 +391,7 @@ strong { color: #F0F6FF; }
 .p-finance        { background: linear-gradient(180deg, #047857, #34D399); }
 .p-assistant      { background: linear-gradient(180deg, #B45309, #FCD34D); }
 .p-health         { background: linear-gradient(180deg, #BE123C, #FB7185); }
+.p-govt           { background: linear-gradient(180deg, #7C3AED, #A78BFA); }
 
 .prod-content { padding: 28px 26px; }
 .prod-label {

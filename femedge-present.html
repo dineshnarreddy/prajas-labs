@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>FemEdge AI — Collaboration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+        :root {
+            --bg:   #040C18;
+            --bg2:  #060F20;
+            --hi:   #F0F6FF;
+            --text: #94A3B8;
+            --b:    rgba(255,255,255,0.07);
+            --fe1:  #BE185D;
+            --fe2:  #EC4899;
+            --fe3:  #F9A8D4;
+            --teal: #0E8FA3;
+            --amber:#D97706;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--hi);
+            touch-action: none;
+        }
+
+        /* ── Slide deck ── */
+        .deck {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .slide {
+            min-width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 48px 32px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ── Background glows ── */
+        .glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        /* ── Progress dots ── */
+        .dots {
+            position: fixed;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            transition: background 0.3s, width 0.3s;
+        }
+        .dot.active {
+            background: var(--fe2);
+            width: 20px;
+            border-radius: 3px;
+        }
+
+        /* ── Nav arrows ── */
+        .nav-arr {
+            position: fixed;
+            bottom: 18px;
+            z-index: 100;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--b);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 18px;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .nav-arr.prev { left: 24px; }
+        .nav-arr.next { right: 24px; }
+        .nav-arr:active { background: rgba(255,255,255,0.1); }
+
+        /* ── Eyebrow label ── */
+        .eyebrow {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--fe3);
+            background: rgba(236,72,153,0.1);
+            border: 1px solid rgba(236,72,153,0.25);
+            border-radius: 100px;
+            padding: 4px 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .eyebrow.teal {
+            color: #5BC4D8;
+            background: rgba(14,143,163,0.1);
+            border-color: rgba(14,143,163,0.25);
+        }
+        .eyebrow.amber {
+            color: #FCD34D;
+            background: rgba(252,211,77,0.07);
+            border-color: rgba(252,211,77,0.2);
+        }
+
+        /* ── Slide 1: Title ── */
+        .s1 { background: var(--bg); }
+        .s1 .glow { width: 400px; height: 400px; background: #BE185D; opacity: 0.15; top: -100px; right: -80px; }
+        .s1 .glow2 { width: 300px; height: 300px; background: #0EA5E9; opacity: 0.1; bottom: -60px; left: -60px; }
+        .s1-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 52px;
+        }
+        .logo-mark {
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg, #0369A1, #0284C7);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.95rem; font-weight: 800;
+            color: #fff;
+        }
+        .logo-text { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+        .s1 h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.4rem, 9vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .s1 h1 span {
+            background: linear-gradient(135deg, #BE185D, #EC4899, #0EA5E9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .s1 p {
+            font-size: 1rem;
+            color: var(--text);
+            line-height: 1.7;
+            max-width: 340px;
+            margin-bottom: 40px;
+        }
+        .s1-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            padding: 5px 12px;
+        }
+
+        /* ── Slide 2: Problem ── */
+        .s2 { background: var(--bg); }
+        .s2 .glow { width: 350px; height: 350px; background: #7C3AED; opacity: 0.1; top: -80px; left: -60px; }
+        .s2 h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.9rem, 7vw, 3rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 32px;
+        }
+        .stat-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .stat-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: var(--bg2);
+            border: 1px solid var(--b);
+            border-radius: 12px;
+            padding: 16px 20px;
+        }
+        .stat-row-n {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(135deg, #BE185D, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            flex-shrink: 0;
+            min-width: 64px;
+        }
+        .stat-row-text {
+            font-size: 0.875rem;
+            color: var(--text);
+            line-height: 1.6;
+            padding-top: 4px;
+        }
+
+        /* ── Slide 3: What we built ── */
+        .s3 { background: var(--bg); }
+        .s3 .glow { width: 300px; height: 300px; background: #0EA5E9; opacity: 0.1; top: -60px; right: -40px; }
+        .s3 h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.9rem, 7vw, 3rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 28px;
+        }
+        .feat-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .feat-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: var(--bg2);
+            border: 1px solid var(--b);
+            border-radius: 12px;
+            padding: 16px 18px;
+        }
+        .feat-icon {
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            background: rgba(236,72,153,0.1);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--fe2);
+            flex-shrink: 0;
+        }
+        .feat-body h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--hi);
+            margin-bottom: 3px;
+        }
+        .feat-body p {
+            font-size: 0.78rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        /* ── Slide 4: The connection ── */
+        .s4 { background: var(--bg); }
+        .s4 .glow { width: 300px; height: 300px; background: #0E7A8B; opacity: 0.12; bottom: -60px; right: -40px; }
+        .s4 h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.9rem, 7vw, 3rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 28px;
+        }
+        .conn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .conn-item {
+            background: var(--bg2);
+            border: 1px solid var(--b);
+            border-top: 2px solid var(--teal);
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .conn-item h4 {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #5BC4D8;
+            margin-bottom: 6px;
+        }
+        .conn-item p {
+            font-size: 0.76rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        /* ── Slide 5: The Ask ── */
+        .s5 { background: var(--bg); }
+        .s5 .glow { width: 400px; height: 400px; background: #BE185D; opacity: 0.12; bottom: -80px; left: -60px; }
+        .s5 h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.9rem, 7vw, 3rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 10px;
+        }
+        .s5-sub {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+        .ask-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+        .ask-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .ask-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #BE185D, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            flex-shrink: 0;
+            line-height: 1.3;
+            min-width: 24px;
+        }
+        .ask-body h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--hi);
+            margin-bottom: 2px;
+        }
+        .ask-body p {
+            font-size: 0.78rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+        .amber-box {
+            background: rgba(217,119,6,0.08);
+            border: 1px solid rgba(217,119,6,0.2);
+            border-left: 3px solid var(--amber);
+            border-radius: 0 10px 10px 0;
+            padding: 14px 18px;
+        }
+        .amber-box p {
+            font-size: 0.8rem;
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        /* ── Slide 6: Contact ── */
+        .s6 { background: var(--bg); text-align: center; }
+        .s6 .glow { width: 500px; height: 500px; background: #BE185D; opacity: 0.1; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .s6 h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 8vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .s6 p {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .contact-card {
+            background: var(--bg2);
+            border: 1px solid var(--b);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .contact-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--hi);
+            margin-bottom: 4px;
+        }
+        .contact-role {
+            font-size: 0.78rem;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #BE185D, #EC4899, #0EA5E9);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .web-link {
+            font-size: 0.78rem;
+            color: var(--text);
+            opacity: 0.6;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide s1">
+        <div class="glow"></div>
+        <div class="glow glow2"></div>
+        <div class="s1-logo">
+            <div class="logo-mark">PL</div>
+            <span class="logo-text">Prajas Labs</span>
+        </div>
+        <div class="eyebrow">Collaboration Brief &middot; July 2026</div>
+        <h1>FemEdge<br><span>AI</span></h1>
+        <p>Women&rsquo;s health intelligence — private, clinical-grade, on your phone.</p>
+        <span class="s1-tag">Tap or swipe to continue &rarr;</span>
+    </div>
+
+    <!-- SLIDE 2: The Problem -->
+    <div class="slide s2">
+        <div class="glow"></div>
+        <div class="eyebrow">The Problem</div>
+        <h2>Women&rsquo;s Health<br>Has a Blind Spot.</h2>
+        <div class="stat-rows">
+            <div class="stat-row">
+                <div class="stat-row-n">1 in 5</div>
+                <div class="stat-row-text">Indian women live with an undiagnosed reproductive or hormonal condition right now.</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-row-n">7–10</div>
+                <div class="stat-row-text">Years it typically takes to diagnose conditions like PCOS or endometriosis after symptoms first appear.</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-row-n">0</div>
+                <div class="stat-row-text">Accessible offline screening tools for women in rural and tier-2/3 cities. Until now.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: What we built -->
+    <div class="slide s3">
+        <div class="glow"></div>
+        <div class="eyebrow">What We Built</div>
+        <h2>FemEdge AI<br>Is Already Live.</h2>
+        <div class="feat-list">
+            <div class="feat-item">
+                <div class="feat-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                </div>
+                <div class="feat-body">
+                    <h4>16+ Health Screenings — All On-Device</h4>
+                    <p>PCOS, endometriosis, bone health, mental health, menstrual irregularity, fibroids, thyroid, and more. No internet needed.</p>
+                </div>
+            </div>
+            <div class="feat-item">
+                <div class="feat-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div class="feat-body">
+                    <h4>Zero Data Leaves the Phone</h4>
+                    <p>Fully encrypted local storage. Biometric gate on every launch. GDPR-compliant by design.</p>
+                </div>
+            </div>
+            <div class="feat-item">
+                <div class="feat-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="feat-body">
+                    <h4>Background Passive Screening</h4>
+                    <p>As users log daily cycles, symptoms, wearable data, and medications — the AI screens quietly and surfaces high-confidence alerts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: The Connection -->
+    <div class="slide s4">
+        <div class="glow"></div>
+        <div class="eyebrow teal">Where It Connects</div>
+        <h2>Clinically<br>Relevant — by<br>Design.</h2>
+        <div class="conn-grid">
+            <div class="conn-item">
+                <h4>Medication Side Effects</h4>
+                <p>Long-term meds cause menstrual disruption and bone loss. FemEdge tracks both passively.</p>
+            </div>
+            <div class="conn-item">
+                <h4>Offline &amp; Rural</h4>
+                <p>Zero connectivity needed. Works on any Android phone in remote areas.</p>
+            </div>
+            <div class="conn-item">
+                <h4>Patient Diaries</h4>
+                <p>Daily symptom logging — same philosophy as a clinical diary, for hormonal health.</p>
+            </div>
+            <div class="conn-item">
+                <h4>Bone Health</h4>
+                <p>Dedicated AI screening for bone density loss markers — relevant to long-term medication patients.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: The Ask -->
+    <div class="slide s5">
+        <div class="glow"></div>
+        <div class="eyebrow">The Collaboration</div>
+        <h2>What We&rsquo;re<br>Looking For.</h2>
+        <p class="s5-sub">FemEdge is live. We need clinical partners to validate and expand its reach.</p>
+        <div class="ask-list">
+            <div class="ask-item">
+                <div class="ask-num">01</div>
+                <div class="ask-body">
+                    <h4>Clinical Feedback</h4>
+                    <p>Do our alerts match what a clinician would want a patient to act on? Help us calibrate.</p>
+                </div>
+            </div>
+            <div class="ask-item">
+                <div class="ask-num">02</div>
+                <div class="ask-body">
+                    <h4>Pilot with Patients</h4>
+                    <p>A defined group using FemEdge. We provide the app. No patient data shared with us.</p>
+                </div>
+            </div>
+            <div class="ask-item">
+                <div class="ask-num">03</div>
+                <div class="ask-body">
+                    <h4>Network &amp; Validation</h4>
+                    <p>Clinical community access for broader validation and eventual publication.</p>
+                </div>
+            </div>
+        </div>
+        <div class="amber-box">
+            <p>Community health camps already reach thousands of women. FemEdge could give each one a free, private screening tool to take home — so early-warning continues beyond the camp day.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: Contact -->
+    <div class="slide s6">
+        <div class="glow"></div>
+        <div class="eyebrow" style="margin: 0 auto 28px;">Prajas Labs &middot; For the People</div>
+        <h2>Let&rsquo;s Build<br>Something<br>Together.</h2>
+        <p>Ready to explore a pilot, an advisory role, or a formal partnership.</p>
+        <div class="contact-card">
+            <div class="contact-name">Dinesh Narreddy</div>
+            <div class="contact-role">Co-founder &amp; Tech Lead &mdash; Prajas Labs</div>
+            <a href="mailto:contact@prajaslabs.com" class="contact-email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                contact@prajaslabs.com
+            </a>
+        </div>
+        <div class="web-link">prajaslabs.com &nbsp;&middot;&nbsp; FemEdge AI on Play Store</div>
+    </div>
+
+</div>
+
+<!-- Navigation -->
+<div class="dots" id="dots"></div>
+<div class="nav-arr prev" id="prev">&#8592;</div>
+<div class="nav-arr next" id="next">&#8594;</div>
+
+<script>
+    const deck = document.getElementById('deck');
+    const dotsEl = document.getElementById('dots');
+    const TOTAL = 6;
+    let current = 0;
+    let startX = 0, startY = 0, dragging = false;
+
+    // Build dots
+    for (let i = 0; i < TOTAL; i++) {
+        const d = document.createElement('div');
+        d.className = 'dot' + (i === 0 ? ' active' : '');
+        dotsEl.appendChild(d);
+    }
+
+    function goTo(n) {
+        if (n < 0 || n >= TOTAL) return;
+        current = n;
+        deck.style.transform = 'translateX(-' + (current * 100) + 'vw)';
+        document.querySelectorAll('.dot').forEach((d, i) => {
+            d.className = 'dot' + (i === current ? ' active' : '');
+        });
+        document.getElementById('prev').style.opacity = current === 0 ? '0.2' : '1';
+        document.getElementById('next').style.opacity = current === TOTAL - 1 ? '0.2' : '1';
+    }
+
+    document.getElementById('prev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('next').addEventListener('click', () => goTo(current + 1));
+
+    // Keyboard
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === ' ') goTo(current + 1);
+        if (e.key === 'ArrowLeft') goTo(current - 1);
+    });
+
+    // Touch swipe
+    document.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        dragging = true;
+    }, { passive: true });
+
+    document.addEventListener('touchend', e => {
+        if (!dragging) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        const dy = e.changedTouches[0].clientY - startY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+            goTo(current + (dx < 0 ? 1 : -1));
+        }
+        dragging = false;
+    }, { passive: true });
+
+    goTo(0);
+</script>
+</body>
+</html>

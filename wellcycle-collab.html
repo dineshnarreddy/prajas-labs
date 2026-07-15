@@ -1,0 +1,588 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WellCycle — Collaboration Brief. Clinical-grade women's health AI, built for real-world partnerships.">
+    <title>Collaborate with WellCycle — Prajas Labs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fe1: #BE185D;
+            --fe2: #EC4899;
+            --fe3: #F9A8D4;
+            --fe-grad: linear-gradient(135deg, #BE185D, #EC4899, #0EA5E9);
+            --teal: #0E7A8B;
+            --teal-soft: rgba(14,122,139,0.12);
+            --amber: #D97706;
+            --amber-soft: rgba(217,119,6,0.1);
+        }
+
+        /* ── Page hero ── */
+        .collab-hero {
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .collab-hero-bg {
+            position: absolute; inset: 0; pointer-events: none;
+        }
+        .ch-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.12;
+        }
+        .ch-glow.g1 { width: 500px; height: 500px; background: #BE185D; top: -60px; right: -60px; }
+        .ch-glow.g2 { width: 400px; height: 400px; background: #0EA5E9; bottom: -40px; left: -40px; }
+
+        .collab-hero .eyebrow { margin-bottom: 20px; }
+
+        .collab-hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--hi);
+            margin-bottom: 20px;
+        }
+        .collab-hero h1 span {
+            background: var(--fe-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .collab-hero p.lead {
+            font-size: 1.1rem;
+            color: var(--text);
+            line-height: 1.8;
+            max-width: 600px;
+            margin-bottom: 36px;
+        }
+        .collab-hero-btns {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn-fe {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            background: var(--fe-grad);
+            color: #fff;
+            border: none;
+            border-radius: var(--r);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 24px rgba(190,24,93,0.35);
+            transition: transform .2s, box-shadow .2s;
+            text-decoration: none;
+        }
+        .btn-fe:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(190,24,93,0.45); }
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            background: transparent;
+            color: var(--fe3);
+            border: 1px solid rgba(236,72,153,0.35);
+            border-radius: var(--r);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .2s;
+            text-decoration: none;
+        }
+        .btn-ghost:hover { background: rgba(236,72,153,0.07); }
+
+        /* ── Stat strip ── */
+        .stat-strip {
+            display: flex;
+            gap: 0;
+            border: 1px solid var(--b);
+            border-radius: var(--r);
+            overflow: hidden;
+            margin: 52px 0 0;
+        }
+        .strip-stat {
+            flex: 1;
+            padding: 20px 16px;
+            border-right: 1px solid var(--b);
+            text-align: center;
+        }
+        .strip-stat:last-child { border-right: none; }
+        .strip-n {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--hi);
+            display: block;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        .strip-l {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text);
+        }
+
+        /* ── Brief card ── */
+        .brief-card {
+            background: var(--bg2);
+            border: 1px solid var(--b);
+            border-radius: var(--r);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .brief-card-head {
+            border-left: 3px solid var(--fe2);
+            padding: 28px 32px;
+            border-bottom: 1px solid var(--b);
+        }
+        .brief-card-head .eyebrow { margin-bottom: 8px; }
+        .brief-card-head h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--hi);
+            margin-bottom: 10px;
+        }
+        .brief-card-head p {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.75;
+            max-width: 580px;
+        }
+        .brief-card-body {
+            padding: 24px 32px;
+        }
+        .brief-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .brief-bullets li {
+            display: flex;
+            gap: 12px;
+            font-size: 0.875rem;
+            color: var(--text);
+            line-height: 1.65;
+            align-items: flex-start;
+        }
+        .brief-bullets li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--fe2);
+            flex-shrink: 0;
+            margin-top: 7px;
+        }
+        .brief-bullets li strong { color: var(--hi); font-weight: 600; }
+
+        /* ── 2-col grid ── */
+        .touch-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .touch-item {
+            background: var(--bg3);
+            border: 1px solid var(--b);
+            border-radius: var(--r);
+            padding: 20px 22px;
+        }
+        .touch-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: var(--teal-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            color: #5BC4D8;
+        }
+        .touch-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #5BC4D8;
+            margin-bottom: 6px;
+        }
+        .touch-item p {
+            font-size: 0.83rem;
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        /* ── Amber callout ── */
+        .amber-callout {
+            background: var(--amber-soft);
+            border: 1px solid rgba(217,119,6,0.25);
+            border-left: 3px solid var(--amber);
+            border-radius: 0 var(--r) var(--r) 0;
+            padding: 24px 28px;
+            margin-top: 20px;
+        }
+        .amber-callout .eyebrow {
+            color: #FCD34D !important;
+            border-color: rgba(252,211,77,0.2) !important;
+            background: rgba(252,211,77,0.07) !important;
+            margin-bottom: 10px;
+        }
+        .amber-callout p {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.75;
+            margin-bottom: 10px;
+        }
+        .amber-callout p:last-child { margin-bottom: 0; }
+
+        /* ── CTA section ── */
+        .collab-cta {
+            text-align: center;
+            background: var(--bg2);
+            border: 1px solid var(--b);
+            border-radius: var(--r);
+            padding: 52px 40px;
+        }
+        .collab-cta h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            color: var(--hi);
+            margin-bottom: 14px;
+        }
+        .collab-cta p {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.8;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+        .collab-cta-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ── Confidential bar ── */
+        .conf-bar {
+            text-align: center;
+            padding: 14px;
+            border-top: 1px solid var(--b);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text);
+            opacity: 0.5;
+        }
+
+        @media (max-width: 600px) {
+            .touch-grid { grid-template-columns: 1fr; }
+            .stat-strip { flex-wrap: wrap; }
+            .strip-stat { flex: 1 1 50%; border-bottom: 1px solid var(--b); }
+            .brief-card-head, .brief-card-body { padding: 20px; }
+            .collab-cta { padding: 36px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+            <div class="logo-mark">PL</div>
+            <div class="logo-text-group">
+                <span class="logo-name">Prajas Labs</span>
+                <span class="logo-sub">For the People</span>
+            </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#sectors">What We Build</a></li>
+            <li><a href="wellcycle.html" class="active-link">WellCycle</a></li>
+            <li><a href="index.html#team">Team</a></li>
+            <li><a href="index.html#vision">Vision</a></li>
+            <li><a href="index.html#contact" class="nav-btn">Contact Us</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="collab-hero">
+    <div class="collab-hero-bg">
+        <div class="ch-glow g1"></div>
+        <div class="ch-glow g2"></div>
+    </div>
+    <div class="container">
+        <div class="eyebrow">WellCycle &middot; Collaboration Brief</div>
+        <h1>
+            Built for Clinical<br>
+            <span>Collaboration.</span>
+        </h1>
+        <p class="lead">
+            WellCycle is a women&rsquo;s health screening platform powered by 16+ on-device AI models.
+            Everything runs on the user&rsquo;s phone &mdash; no internet required, no health data uploaded.
+            We are looking for clinical partners who can help us validate, refine, and expand its reach.
+        </p>
+        <div class="collab-hero-btns">
+            <a href="mailto:contact@prajaslabs.com / dineshlazer999@gmail.com?subject=WellCycle Collaboration Inquiry" class="btn-fe">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Get in Touch
+            </a>
+            <a href="wellcycle.html" class="btn-ghost">
+                &larr; Back to WellCycle
+            </a>
+        </div>
+
+        <div class="stat-strip">
+            <div class="strip-stat">
+                <span class="strip-n">16+</span>
+                <span class="strip-l">Health Screenings</span>
+            </div>
+            <div class="strip-stat">
+                <span class="strip-n">100%</span>
+                <span class="strip-l">On-Device</span>
+            </div>
+            <div class="strip-stat">
+                <span class="strip-n">Private</span>
+                <span class="strip-l">Encrypted</span>
+            </div>
+            <div class="strip-stat">
+                <span class="strip-n">0 MB</span>
+                <span class="strip-l">Health Data Uploaded</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: What We Built -->
+<section class="section">
+    <div class="container">
+        <div class="sec-head fade-in">
+            <div class="eyebrow">The Platform</div>
+            <h2 class="sec-title">What We Built</h2>
+        </div>
+
+        <div class="brief-card fade-in">
+            <div class="brief-card-head">
+                <div class="eyebrow" style="margin-bottom:8px;">Architecture</div>
+                <h3>On-Device AI. No Cloud. No Compromise.</h3>
+                <p>
+                    All health screenings run entirely on the user&rsquo;s Android phone using proprietary on-device AI.
+                    No internet connection is required. Health data is end-to-end encrypted and never leaves the device &mdash;
+                    not to our servers, not to anyone.
+                </p>
+            </div>
+            <div class="brief-card-body">
+                <ul class="brief-bullets">
+                    <li><strong>Conditions screened</strong> &mdash; PCOS, endometriosis, menstrual irregularity, bone health, mental health, fibroids, thyroid, anaemia, and more. Models fire with age-appropriate gating logic.</li>
+                    <li><strong>Passive background screening</strong> &mdash; the engine scans as users log cycles, symptoms, wearable readings, and medications. High-confidence findings surface as prioritised clinical alerts.</li>
+                    <li><strong>Biometric security</strong> &mdash; fingerprint or face ID required on every launch. Data is inaccessible without the device keystore key.</li>
+                    <li><strong>Live on the Play Store</strong> &mdash; WellCycle is available now, free to download on any Android 8.0+ device. No subscription required for core screening.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: The Problem -->
+<section class="section" style="padding-top:0;">
+    <div class="container">
+        <div class="sec-head fade-in">
+            <div class="eyebrow">The Problem</div>
+            <h2 class="sec-title">India&rsquo;s Women&rsquo;s Health Screening Gap</h2>
+            <p class="sec-desc">
+                An estimated 1 in 5 Indian women lives with an undiagnosed reproductive or hormonal condition.
+                Most existing tools require a hospital visit, a lab test, or a reliable internet connection.
+            </p>
+        </div>
+
+        <div class="brief-card fade-in">
+            <div class="brief-card-body">
+                <ul class="brief-bullets">
+                    <li>Women in tier-2 and tier-3 cities and rural districts have no accessible early-warning pathway for conditions like PCOS or endometriosis &mdash; which are typically diagnosed 7&ndash;10 years after symptoms begin.</li>
+                    <li>Women on long-term medications often develop secondary effects &mdash; menstrual disruption, hormonal imbalance, bone density loss &mdash; that go unmonitored because no single tool tracks them together.</li>
+                    <li>FemEdge works entirely offline. Any Android phone becomes a private, clinical-grade screening device &mdash; no hospital visit, no lab, no internet required.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: Clinical Touchpoints -->
+<section class="section" style="padding-top:0;">
+    <div class="container">
+        <div class="sec-head fade-in">
+            <div class="eyebrow">Where It Connects</div>
+            <h2 class="sec-title">Clinical Touchpoints</h2>
+            <p class="sec-desc">
+                We are not reshaping FemEdge for any one specialty. These intersections exist naturally
+                in the clinical data our models are built on.
+            </p>
+        </div>
+
+        <div class="touch-grid fade-in">
+            <div class="touch-item">
+                <div class="touch-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77A5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </div>
+                <div class="touch-title">Medication &amp; Menstrual Health</div>
+                <p>Long-term medications frequently cause menstrual irregularity and bone density changes. FemEdge tracks both, surfacing signals a patient might not connect to their medication.</p>
+            </div>
+            <div class="touch-item">
+                <div class="touch-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div class="touch-title">Offline-First, Rural-Ready</div>
+                <p>Full AI inference with zero connectivity. Designed for exactly the same underserved populations that community health outreach programmes reach.</p>
+            </div>
+            <div class="touch-item">
+                <div class="touch-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="touch-title">Patient Self-Monitoring</div>
+                <p>Women log symptoms daily &mdash; the same philosophy as a clinical symptom diary, applied to hormonal health. Longitudinal patterns surface what point-in-time consultations miss.</p>
+            </div>
+            <div class="touch-item">
+                <div class="touch-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                </div>
+                <div class="touch-title">Bone Health Screening</div>
+                <p>A dedicated AI screening module detects early markers of bone density loss &mdash; relevant wherever long-term medication use and nutritional deficiency overlap in the patient population.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: The Collaboration -->
+<section class="section" style="padding-top:0;">
+    <div class="container">
+        <div class="sec-head fade-in">
+            <div class="eyebrow">What We Are Looking For</div>
+            <h2 class="sec-title">The Collaboration</h2>
+            <p class="sec-desc">
+                WellCycle is built and live. What it needs now is structured clinical feedback
+                and the credibility that comes from working alongside experienced clinicians.
+            </p>
+        </div>
+
+        <div class="brief-card fade-in">
+            <div class="brief-card-body">
+                <ul class="brief-bullets">
+                    <li><strong>Clinical feedback</strong> &mdash; does what the app surfaces match what a clinician would want a patient to act on? We want to calibrate our alert thresholds against real clinical judgment.</li>
+                    <li><strong>Pilot access</strong> &mdash; a defined group of patients using FemEdge and reporting back. We provide the app, the onboarding, and the analysis. No patient data is shared with us &mdash; feedback is qualitative.</li>
+                    <li><strong>Network introductions</strong> &mdash; access to the clinical community for broader validation, peer review of our model methodology, and eventual publication of outcomes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="amber-callout fade-in">
+            <div class="eyebrow">Foundation Collaboration</div>
+            <p>
+                Community health camps already reach thousands of women in underserved areas each year.
+                We believe WellCycle could complement that work &mdash; giving women a free, private,
+                take-home screening tool after a camp visit, so early-warning continues beyond the camp day itself.
+            </p>
+            <p>
+                We are open to exploring a formal collaboration on a pilot basis. If the results are there,
+                a deeper partnership structure can follow naturally from that. We would rather let the clinical
+                outcomes make the case than move ahead of them.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="padding-top:0; padding-bottom: 80px;">
+    <div class="container">
+        <div class="collab-cta fade-in">
+            <div class="eyebrow" style="margin: 0 auto 20px; display:table;">Ready to Talk?</div>
+            <h2>Let&rsquo;s Build Something Together.</h2>
+            <p>
+                Whether it&rsquo;s a pilot, a clinical advisory role, or an exploratory conversation &mdash;
+                we&rsquo;re ready to listen and move at whatever pace works for you.
+            </p>
+            <div class="collab-cta-btns">
+                <a href="mailto:contact@prajaslabs.com / dineshlazer999@gmail.com?subject=WellCycle Collaboration Inquiry" class="btn-fe">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    contact@prajaslabs.com / dineshlazer999@gmail.com
+                </a>
+                <a href="wellcycle.html" class="btn-ghost">&larr; WellCycle Overview</a>
+            </div>
+            <p style="margin-top:20px; font-size:0.78rem; color:var(--text); opacity:0.6;">
+                Prajas Labs Private Limited &nbsp;&middot;&nbsp; Andhra Pradesh, India &nbsp;&middot;&nbsp; CIN: U62099AP2026PTC126173
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="logo-mark">PL</div>
+                    <div class="logo-text-group">
+                        <span class="logo-name">Prajas Labs</span>
+                        <span class="logo-sub">For the People</span>
+                    </div>
+                </div>
+                <p>Building technology that empowers<br>people and communities.</p>
+            </div>
+            <div class="footer-cols">
+                <div class="fcol">
+                    <h4>Company</h4>
+                    <a href="index.html#about">About Us</a>
+                    <a href="index.html#team">Leadership</a>
+                    <a href="index.html#vision">Vision</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="fcol">
+                    <h4>WellCycle</h4>
+                    <a href="wellcycle.html">Product Overview</a>
+                    <a href="wellcycle-collab.html">Collaborate With Us</a>
+                    <a href="wellcycle-privacy.html">Privacy Policy</a>
+                    <a href="mailto:contact@prajaslabs.com / dineshlazer999@gmail.com?subject=WellCycle Beta Access Request">Request Beta Access</a>
+                </div>
+                <div class="fcol">
+                    <h4>Legal</h4>
+                    <a href="wellcycle-privacy.html">WellCycle Privacy Policy</a>
+                    <p class="flegal" style="margin-top:10px;">CIN: U62099AP2026PTC126173</p>
+                    <p class="flegal">PAN: AARCP1301P</p>
+                    <p class="flegal">Andhra Pradesh, India</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Prajas Labs Private Limited. All rights reserved.</p>
+            <p>Made in India &nbsp;&middot;&nbsp; For the People</p>
+        </div>
+    </div>
+</footer>
+
+<div class="conf-bar">Confidential &middot; Prajas Labs &middot; July 2026</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -313,7 +313,7 @@ GitHub Pages auto-deploys in ~1–2 minutes. Do Ctrl+Shift+R on the browser to f
 
 | Trigger | What to Add |
 |---------|-------------|
-| Logo designed | Replace "PL" text mark with actual logo SVG/PNG |
+| Logo designed | ✅ Done 2026-07-21 — logo.svg in repo, applied to navbar and footer |
 | FemEdge AI launched | Add product name + Google Play / App Store link |
 | Portfolio-AI launched | Add product name + link |
 | AgriEdgeAI ready to announce | Add as 5th product card, add "Agriculture AI" as 7th domain |
@@ -340,7 +340,7 @@ GitHub Pages auto-deploys in ~1–2 minutes. Do Ctrl+Shift+R on the browser to f
 
 1. **⚠️ Microsoft 365 trial expires 2 July 2026** — either add payment method or cancel at admin.cloud.microsoft → Billing → Subscriptions
 2. **GoDaddy domain renewal** — check auto-renewal is enabled; domain expires annually ~June 2027
-3. **Logo pending** — "PL" text mark is placeholder; add real logo when ready
+3. **Logo** — ✅ logo.svg created and live on site (navbar + footer). letterhead.html available at prajaslabs.com/letterhead.html
 4. **Contact form** — currently uses mailto (opens email client); upgrade to Formspree for proper server-side delivery when needed
 5. **Company bank account** — website at prajaslabs.com can be shared with bank for account opening
 
@@ -360,3 +360,8 @@ GitHub Pages auto-deploys in ~1–2 minutes. Do Ctrl+Shift+R on the browser to f
 | 2026-06-02 | Website v1 launched: 8 sections, 6 sectors, 4 product cards |
 | 2026-06-02 | Website redesigned: removed Sanskrit, clean blue palette, content cleaned |
 | 2026-06-02 | Removed incorporated date, CIN from prominent sections — footer only |
+| 2026-07-21 | Full website redesign v2: dark OLED navy palette, Syne+Inter fonts, animated neural network SVG hero, marquee, domain cards with colored left borders, product header bands, NaukriSetu orphan-card fix |
+| 2026-07-21 | logo.svg created — SVG recreation of company logo icon (network dome + 3 human figures in amber/blue/gray), icon-only (no text), works on dark and light backgrounds |
+| 2026-07-21 | Logo applied to navbar and footer, replacing PL text mark |
+| 2026-07-21 | letterhead.html created — print-ready A4 corporate letterhead with logo, dark header, contenteditable fields, watermark, signature block, company seal area, CIN/PAN/TAN in footer |
+| 2026-07-21 | CSS ui-ux-pro-max improvements: premium multi-layer card hover shadows, inset highlight, section title gradient accent line (::after), richer --glow token, focus-visible ring, prefers-reduced-motion support |

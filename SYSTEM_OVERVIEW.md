@@ -365,3 +365,5 @@ GitHub Pages auto-deploys in ~1–2 minutes. Do Ctrl+Shift+R on the browser to f
 | 2026-07-21 | Logo applied to navbar and footer, replacing PL text mark |
 | 2026-07-21 | letterhead.html created — print-ready A4 corporate letterhead with logo, dark header, contenteditable fields, watermark, signature block, company seal area, CIN/PAN/TAN in footer |
 | 2026-07-21 | CSS ui-ux-pro-max improvements: premium multi-layer card hover shadows, inset highlight, section title gradient accent line (::after), richer --glow token, focus-visible ring, prefers-reduced-motion support |
+| 2026-07-21 | logo.png added — actual company logo PNG (1784657833190.png from Downloads) replaces logo.svg; letterhead.html updated to use logo.png |
+| 2026-07-21 | Full website redesign v3 — Linear/Vercel style: near-black #07090F bg, Syne 800 hero H1 (clamp 4–8.5rem), left-aligned hero, numbered domain list (01–06), products mosaic board, editorial about, minimal team list, no marquee, no eyebrow chips, no hero stat strip, no neural net SVG |

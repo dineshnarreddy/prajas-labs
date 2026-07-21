@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Prajas Labs Private Limited — An Indian AI company building intelligent products in health, finance, computer vision, and personal AI. For the People.">
-    <meta name="theme-color" content="#0369A1">
+    <meta name="theme-color" content="#07090F">
     <title>Prajas Labs — For the People</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
 <nav class="navbar" id="navbar">
     <div class="nav-container">
         <a href="#home" class="nav-logo">
-            <img src="logo.svg" alt="Prajas Labs" class="logo-img" width="58" height="41">
+            <img src="logo.png" alt="Prajas Labs" class="logo-img">
             <div class="logo-text-group">
                 <span class="logo-name">Prajas Labs</span>
                 <span class="logo-sub">For the People</span>
@@ -39,188 +39,43 @@
 
 <!-- HERO -->
 <section id="home" class="hero">
-    <div class="hero-bg">
-        <div class="hero-glow g1"></div>
-        <div class="hero-glow g2"></div>
-        <div class="hero-glow g3"></div>
-        <div class="hero-grid"></div>
-        <!-- Neural network visual -->
-        <div class="hero-net-wrap" aria-hidden="true">
-            <svg class="hero-net" viewBox="0 0 480 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <filter id="ng" x="-60%" y="-60%" width="220%" height="220%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
-                        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
-                    <filter id="ngs" x="-40%" y="-40%" width="180%" height="180%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b"/>
-                        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
-                </defs>
-                <!-- Connection lines -->
-                <line x1="225" y1="150" x2="75"  y2="80"  class="nl" style="--d:0s"/>
-                <line x1="225" y1="150" x2="200" y2="48"  class="nl" style="--d:.5s"/>
-                <line x1="225" y1="150" x2="340" y2="60"  class="nl" style="--d:1s"/>
-                <line x1="225" y1="150" x2="100" y2="200" class="nl" style="--d:1.5s"/>
-                <line x1="225" y1="150" x2="370" y2="185" class="nl" style="--d:2s"/>
-                <line x1="100" y1="200" x2="55"  y2="295" class="nl" style="--d:2.5s"/>
-                <line x1="100" y1="200" x2="75"  y2="80"  class="nl" style="--d:.3s"/>
-                <line x1="370" y1="185" x2="430" y2="125" class="nl" style="--d:.7s"/>
-                <line x1="370" y1="185" x2="410" y2="265" class="nl" style="--d:1.3s"/>
-                <line x1="370" y1="185" x2="280" y2="295" class="nl" style="--d:1.9s"/>
-                <line x1="55"  y1="295" x2="160" y2="315" class="nl" style="--d:2.3s"/>
-                <line x1="160" y1="315" x2="280" y2="295" class="nl" style="--d:2.9s"/>
-                <line x1="230" y1="350" x2="160" y2="315" class="nl" style="--d:3.4s"/>
-                <line x1="200" y1="48"  x2="340" y2="60"  class="nl" style="--d:.2s"/>
-                <line x1="340" y1="60"  x2="430" y2="125" class="nl" style="--d:.9s"/>
-                <line x1="280" y1="295" x2="230" y2="350" class="nl" style="--d:3.1s"/>
-                <!-- Hub rings -->
-                <circle cx="225" cy="150" r="22" stroke="rgba(14,165,233,0.2)" stroke-width="1" class="hr"/>
-                <circle cx="225" cy="150" r="38" stroke="rgba(14,165,233,0.09)" stroke-width="1" class="hr hr2"/>
-                <!-- Hub node -->
-                <circle cx="225" cy="150" r="9"  fill="#0EA5E9" class="nn hub" filter="url(#ng)"/>
-                <!-- Satellite nodes -->
-                <circle cx="100" cy="200" r="6"  fill="#38BDF8" class="nn sat" filter="url(#ngs)" style="--d:.8s"/>
-                <circle cx="370" cy="185" r="6"  fill="#38BDF8" class="nn sat" filter="url(#ngs)" style="--d:1.6s"/>
-                <!-- Small nodes -->
-                <circle cx="75"  cy="80"  r="4"  fill="#7DD3FC" class="nn" style="--d:.4s"/>
-                <circle cx="200" cy="48"  r="4"  fill="#7DD3FC" class="nn" style="--d:1.1s"/>
-                <circle cx="340" cy="60"  r="4"  fill="#7DD3FC" class="nn" style="--d:.6s"/>
-                <circle cx="430" cy="125" r="3"  fill="#7DD3FC" class="nn" style="--d:1.4s"/>
-                <circle cx="55"  cy="295" r="3"  fill="#7DD3FC" class="nn" style="--d:2.2s"/>
-                <circle cx="160" cy="315" r="4"  fill="#7DD3FC" class="nn" style="--d:2.7s"/>
-                <circle cx="280" cy="295" r="4"  fill="#7DD3FC" class="nn" style="--d:2.1s"/>
-                <circle cx="410" cy="265" r="3"  fill="#7DD3FC" class="nn" style="--d:1.7s"/>
-                <circle cx="230" cy="350" r="3"  fill="#7DD3FC" class="nn" style="--d:3.2s"/>
-            </svg>
-        </div>
-    </div>
     <div class="hero-inner">
-        <div class="hero-badge fade-in">
-            <span class="badge-dot"></span>
-            Prajas Labs Private Limited &nbsp;·&nbsp; Andhra Pradesh, India
-        </div>
-        <h1 class="fade-in">
-            Technology Built<br>
-            <span class="hero-gradient">For the People</span>
-        </h1>
-        <p class="hero-desc fade-in">
-            An Indian technology company building intelligent products across artificial intelligence,
-            health, finance, and vision — guided by one founding principle: serve the people.
-        </p>
+        <p class="hero-kicker fade-in">Prajas Labs Private Limited &nbsp;·&nbsp; Andhra Pradesh, India</p>
+        <h1 class="fade-in">Technology<br>Built For<br>the People.</h1>
+        <p class="hero-desc fade-in">An Indian technology company building intelligent products across artificial intelligence, health, finance, and vision.</p>
         <div class="hero-btns fade-in">
-            <a href="#sectors" class="btn-grad">
+            <a href="#sectors" class="btn-primary">
                 What We Build
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="#contact" class="btn-ghost">Get in Touch</a>
-        </div>
-        <div class="hero-strip fade-in">
-            <div class="strip-item">
-                <span class="strip-val" data-count="6">0</span>
-                <span class="strip-label">Technology Domains</span>
-            </div>
-            <div class="strip-sep"></div>
-            <div class="strip-item">
-                <span class="strip-val">AI&#8209;First</span>
-                <span class="strip-label">Core Capability</span>
-            </div>
-            <div class="strip-sep"></div>
-            <div class="strip-item">
-                <span class="strip-val">Multi&#8209;Sector</span>
-                <span class="strip-label">Technology Company</span>
-            </div>
-            <div class="strip-sep"></div>
-            <div class="strip-item">
-                <span class="strip-val">India</span>
-                <span class="strip-label">Headquartered</span>
-            </div>
+            <a href="#contact" class="btn-text">Get in Touch →</a>
         </div>
     </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-section" aria-hidden="true">
-    <div class="marquee-fade marquee-fade-l"></div>
-    <div class="marquee-track">
-        <span>Artificial Intelligence</span><span class="mx">·</span>
-        <span>Computer Vision</span><span class="mx">·</span>
-        <span>Health Technology</span><span class="mx">·</span>
-        <span>Financial Intelligence</span><span class="mx">·</span>
-        <span>Personal AI</span><span class="mx">·</span>
-        <span>Community Platforms</span><span class="mx">·</span>
-        <span>Deep Learning</span><span class="mx">·</span>
-        <span>Edge Computing</span><span class="mx">·</span>
-        <span>Built in India</span><span class="mx">·</span>
-        <span>For the People</span><span class="mx">·</span>
-        <span>Artificial Intelligence</span><span class="mx">·</span>
-        <span>Computer Vision</span><span class="mx">·</span>
-        <span>Health Technology</span><span class="mx">·</span>
-        <span>Financial Intelligence</span><span class="mx">·</span>
-        <span>Personal AI</span><span class="mx">·</span>
-        <span>Community Platforms</span><span class="mx">·</span>
-        <span>Deep Learning</span><span class="mx">·</span>
-        <span>Edge Computing</span><span class="mx">·</span>
-        <span>Built in India</span><span class="mx">·</span>
-        <span>For the People</span><span class="mx">·</span>
-    </div>
-    <div class="marquee-fade marquee-fade-r"></div>
-</div>
-
 <!-- ABOUT -->
 <section id="about" class="section about">
     <div class="container">
-        <div class="eyebrow fade-in">About Us</div>
         <div class="about-layout">
             <div class="about-left fade-in">
-                <h2>Not Just an AI Company.<br>A Technology Company<br><em>For People.</em></h2>
-                <p>Prajas Labs is a technology company headquartered in Andhra Pradesh, India. Our founding principle is simple — every product we build must be useful, accessible, and meaningful to real people.</p>
+                <h2>Not just an AI company.<br>A technology company<br>for people.</h2>
+            </div>
+            <div class="about-right fade-in">
+                <p class="about-lead">Prajas Labs is a technology company headquartered in Andhra Pradesh, India. Our founding principle is simple — every product we build must be useful, accessible, and meaningful to real people.</p>
                 <p>We began with artificial intelligence, but we will not be limited by it. From health technology to financial intelligence, from computer vision to personal AI, we build across every sector where technology can make a genuine difference.</p>
                 <div class="about-meta">
                     <div class="am-item">
                         <span class="am-label">Founded</span>
                         <span class="am-val">2026</span>
                     </div>
-                    <div class="am-div"></div>
                     <div class="am-item">
                         <span class="am-label">Headquartered</span>
                         <span class="am-val">Andhra Pradesh, India</span>
                     </div>
-                    <div class="am-div"></div>
                     <div class="am-item">
                         <span class="am-label">Focus</span>
                         <span class="am-val">AI &amp; Technology</span>
                     </div>
-                </div>
-            </div>
-            <div class="about-right fade-in">
-                <div class="principle-card">
-                    <div class="pc-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3>People First</h3>
-                    <p>Every product begins and ends with the people who will use it. Technology for its own sake is not our goal.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="pc-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    </div>
-                    <h3>Research&#8209;Backed</h3>
-                    <p>Grounded in academic research, with a founding team holding deep expertise across AI, health, and complex systems.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="pc-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                    </div>
-                    <h3>Built in India</h3>
-                    <p>Building world-class products from Andhra Pradesh — for India first, and for the world.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="pc-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
-                    </div>
-                    <h3>Beyond Limits</h3>
-                    <p>We expand wherever technology can genuinely serve people. No single domain defines us.</p>
                 </div>
             </div>
         </div>
@@ -230,95 +85,53 @@
 <!-- WHAT WE BUILD -->
 <section id="sectors" class="section sectors">
     <div class="container">
-        <div class="eyebrow fade-in">What We Build</div>
-        <h2 class="sec-title fade-in">Six Domains. One Mission.</h2>
-        <p class="sec-desc fade-in">Prajas Labs operates across six technology domains — each chosen because it directly improves lives and solves problems that matter.</p>
-        <div class="domains-grid">
-
-            <div class="domain-card d-ai fade-in">
-                <div class="domain-accent"></div>
-                <div class="domain-body">
-                    <div class="domain-top">
-                        <div class="domain-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <span class="domain-no">01</span>
-                    </div>
+        <div class="sec-header fade-in">
+            <h2>Six domains.<br>One mission.</h2>
+            <p>Wherever technology can genuinely improve lives — that is where we build.</p>
+        </div>
+        <div class="domains-list">
+            <div class="domain-row fade-in">
+                <span class="dn">01</span>
+                <div class="dinfo">
                     <h3>Artificial Intelligence</h3>
-                    <p>Custom AI models, deep learning systems, and intelligent automation built for businesses and individuals. Our core capability — applied across every domain.</p>
+                    <p>Custom AI models, deep learning, and intelligent automation — the core capability applied across every domain we work in.</p>
                 </div>
             </div>
-
-            <div class="domain-card d-health fade-in">
-                <div class="domain-accent"></div>
-                <div class="domain-body">
-                    <div class="domain-top">
-                        <div class="domain-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                        </div>
-                        <span class="domain-no">02</span>
-                    </div>
+            <div class="domain-row fade-in">
+                <span class="dn">02</span>
+                <div class="dinfo">
                     <h3>Health Technology</h3>
-                    <p>AI-powered diagnostic tools and health monitoring platforms that put the patient first — accessible, private, and built to make a real difference.</p>
+                    <p>AI-powered diagnostic tools and health monitoring platforms that put the patient first — accessible, private, and genuinely useful.</p>
                 </div>
             </div>
-
-            <div class="domain-card d-finance fade-in">
-                <div class="domain-accent"></div>
-                <div class="domain-body">
-                    <div class="domain-top">
-                        <div class="domain-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-                        </div>
-                        <span class="domain-no">03</span>
-                    </div>
+            <div class="domain-row fade-in">
+                <span class="dn">03</span>
+                <div class="dinfo">
                     <h3>Financial Intelligence</h3>
-                    <p>Intelligent platforms for portfolio management and market intelligence — powerful enough for professionals, simple enough for everyone.</p>
+                    <p>Intelligent platforms for portfolio management and market analysis — powerful enough for professionals, simple enough for everyone.</p>
                 </div>
             </div>
-
-            <div class="domain-card d-vision fade-in">
-                <div class="domain-accent"></div>
-                <div class="domain-body">
-                    <div class="domain-top">
-                        <div class="domain-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        </div>
-                        <span class="domain-no">04</span>
-                    </div>
+            <div class="domain-row fade-in">
+                <span class="dn">04</span>
+                <div class="dinfo">
                     <h3>Computer Vision</h3>
-                    <p>Facial recognition, identity verification, and visual AI systems for security and access control — built on state-of-the-art vision models.</p>
+                    <p>Facial recognition, identity verification, and visual AI for security and access control — built on state-of-the-art models.</p>
                 </div>
             </div>
-
-            <div class="domain-card d-community fade-in">
-                <div class="domain-accent"></div>
-                <div class="domain-body">
-                    <div class="domain-top">
-                        <div class="domain-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <span class="domain-no">05</span>
-                    </div>
+            <div class="domain-row fade-in">
+                <span class="dn">05</span>
+                <div class="dinfo">
                     <h3>Community Platforms</h3>
-                    <p>Digital platforms that connect people to their communities — local services, events, and social infrastructure. Technology that brings people together.</p>
+                    <p>Digital platforms that connect people to communities, local services, and social infrastructure. Technology that brings people together.</p>
                 </div>
             </div>
-
-            <div class="domain-card d-ai-personal fade-in">
-                <div class="domain-accent"></div>
-                <div class="domain-body">
-                    <div class="domain-top">
-                        <div class="domain-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
-                        </div>
-                        <span class="domain-no">06</span>
-                    </div>
+            <div class="domain-row fade-in">
+                <span class="dn">06</span>
+                <div class="dinfo">
                     <h3>Personal AI</h3>
-                    <p>Voice-enabled intelligent assistants and personal AI tools that work for individuals — private, context-aware, and integrated into everyday life.</p>
+                    <p>Voice-enabled intelligent assistants and personal AI tools — private, context-aware, integrated into everyday life.</p>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -326,121 +139,96 @@
 <!-- PRODUCTS -->
 <section id="products" class="section products">
     <div class="container">
-        <div class="eyebrow fade-in">Work in Progress</div>
-        <h2 class="sec-title fade-in">What We're Building</h2>
-        <p class="sec-desc fade-in">Multiple products currently in active development — each built around a real need, for real people.</p>
-        <div class="products-wrap">
-
-            <div class="prod-card fade-in">
-                <div class="prod-header p-vision">
-                    <span class="prod-cat">Computer Vision</span>
-                    <span class="prod-status">In Development</span>
-                </div>
-                <div class="prod-content">
-                    <h3>Facial Recognition System</h3>
-                    <p>An AI-powered identity platform providing accurate facial recognition for security, access control, and intelligent verification at scale.</p>
-                </div>
-            </div>
-
-            <div class="prod-card fade-in">
-                <div class="prod-header p-finance">
-                    <span class="prod-cat">Financial Intelligence</span>
-                    <span class="prod-status">In Development</span>
-                </div>
-                <div class="prod-content">
-                    <h3>Portfolio Management Platform</h3>
-                    <p>A smart financial platform for investment tracking, market analysis, and AI-driven insights — built for both individuals and professionals.</p>
-                </div>
-            </div>
-
-            <div class="prod-card fade-in">
-                <div class="prod-header p-assistant">
-                    <span class="prod-cat">Personal AI</span>
-                    <span class="prod-status">In Development</span>
-                </div>
-                <div class="prod-content">
-                    <h3>Personal AI Assistant</h3>
-                    <p>A voice-enabled intelligent assistant built for individuals — private, on-device capable, and designed to integrate into everyday life.</p>
-                </div>
-            </div>
-
-            <div class="prod-card fade-in">
-                <div class="prod-header p-health">
+        <div class="sec-header fade-in">
+            <h2>What We're<br>Building</h2>
+            <p>Multiple products in active development — each built around a real need, for real people.</p>
+        </div>
+        <div class="products-board">
+            <div class="prod-featured fade-in">
+                <div class="prod-meta">
                     <span class="prod-cat">Health &amp; Wellness · Android</span>
-                    <span class="prod-status prod-live">Available</span>
+                    <span class="prod-badge-live">Available Now</span>
                 </div>
-                <div class="prod-content">
-                    <h3>WellCycle</h3>
-                    <p>An AI-powered women's health companion — screening 20 health conditions entirely on-device, with full privacy. Your health data never leaves your phone.</p>
-                    <a href="wellcycle.html" class="prod-link">Learn more →</a>
-                </div>
+                <h3>WellCycle</h3>
+                <p>An AI-powered women's health companion that screens 20 health conditions entirely on-device, with full privacy. Your health data never leaves your phone.</p>
+                <a href="wellcycle.html" class="prod-link">Learn more →</a>
             </div>
-
-            <div class="prod-card fade-in">
-                <div class="prod-header p-govt">
-                    <span class="prod-cat">Government Jobs · India · Android</span>
-                    <span class="prod-status">In Development</span>
+            <div class="prod-secondary">
+                <div class="prod-item fade-in">
+                    <div class="prod-meta">
+                        <span class="prod-cat">Computer Vision</span>
+                        <span class="prod-badge-dev">In Development</span>
+                    </div>
+                    <h3>Facial Recognition System</h3>
+                    <p>AI-powered identity platform for security, access control, and intelligent verification at scale.</p>
                 </div>
-                <div class="prod-content">
+                <div class="prod-item fade-in">
+                    <div class="prod-meta">
+                        <span class="prod-cat">Financial Intelligence</span>
+                        <span class="prod-badge-dev">In Development</span>
+                    </div>
+                    <h3>Portfolio Management Platform</h3>
+                    <p>Smart financial platform for investment tracking, market analysis, and AI-driven insights.</p>
+                </div>
+                <div class="prod-item fade-in">
+                    <div class="prod-meta">
+                        <span class="prod-cat">Personal AI</span>
+                        <span class="prod-badge-dev">In Development</span>
+                    </div>
+                    <h3>Personal AI Assistant</h3>
+                    <p>Voice-enabled intelligent assistant — private, on-device capable, designed for everyday life.</p>
+                </div>
+                <div class="prod-item fade-in">
+                    <div class="prod-meta">
+                        <span class="prod-cat">Government Jobs · India · Android</span>
+                        <span class="prod-badge-dev">In Development</span>
+                    </div>
                     <h3>NaukriSetu</h3>
-                    <p>A unified government jobs platform for India — aggregating central and state PSC vacancies, exam notifications, and recruitment alerts in one place.</p>
+                    <p>Unified government jobs platform for India — aggregating central and state PSC vacancies in one place.</p>
                 </div>
             </div>
-
         </div>
-        <div class="prod-footer fade-in">
-            Product names and launch dates will be announced when ready.
+        <p class="prod-footer fade-in">
+            Product names and launch dates announced when ready. &nbsp;
             <a href="#contact">Enquire about early access →</a>
-        </div>
+        </p>
     </div>
 </section>
 
 <!-- TEAM -->
 <section id="team" class="section team">
     <div class="container">
-        <div class="eyebrow fade-in">Leadership</div>
-        <h2 class="sec-title fade-in">The People Behind Prajas Labs</h2>
-        <div class="team-wrap">
-
-            <div class="team-card fade-in">
-                <div class="team-panel">
-                    <div class="avatar">
-                        <div class="avatar-glow"></div>
-                        <div class="avatar-init">DK</div>
-                    </div>
+        <div class="sec-header fade-in">
+            <h2>The People<br>Behind Prajas Labs</h2>
+        </div>
+        <div class="team-list">
+            <div class="team-item fade-in">
+                <div class="team-init">DK</div>
+                <div class="team-body">
+                    <h3>Dinesh Kumar Reddy Narreddy</h3>
+                    <span class="team-role">Co-Founder · Director · Chief Technology Officer</span>
+                    <p>PhD researcher in Artificial Intelligence at a UK university, with over 8 years of experience building production AI systems across computer vision, health technology, financial intelligence, and edge computing. Innovator, technical architect, and the driving force behind every product at Prajas Labs.</p>
                     <div class="team-tags">
                         <span>Artificial Intelligence</span>
                         <span>Computer Vision</span>
                         <span>PhD — UK</span>
-                        <span>8+ Years</span>
+                        <span>8+ Years Experience</span>
                     </div>
-                </div>
-                <div class="team-body">
-                    <h3>Dinesh Kumar Reddy Narreddy</h3>
-                    <span class="role-title">Co-Founder &nbsp;&middot;&nbsp; Director &nbsp;&middot;&nbsp; Chief Technology Officer</span>
-                    <p>PhD researcher in Artificial Intelligence at a UK university, with over 8 years of experience building production AI systems across computer vision, health technology, financial intelligence, and edge computing. Innovator, technical architect, and the driving force behind every product at Prajas Labs.</p>
                 </div>
             </div>
-
-            <div class="team-card fade-in">
-                <div class="team-panel">
-                    <div class="avatar">
-                        <div class="avatar-glow"></div>
-                        <div class="avatar-init">RN</div>
-                    </div>
+            <div class="team-item fade-in">
+                <div class="team-init">RN</div>
+                <div class="team-body">
+                    <h3>Ramamohan Reddy Narreddy</h3>
+                    <span class="team-role">Co-Founder · Director</span>
+                    <p>Provides strategic oversight, operational leadership, and a grounding vision rooted in community values — ensuring the company remains true to its core mission of building technology that genuinely serves people.</p>
                     <div class="team-tags">
                         <span>Strategy</span>
                         <span>Leadership</span>
                         <span>Operations</span>
                     </div>
                 </div>
-                <div class="team-body">
-                    <h3>Ramamohan Reddy Narreddy</h3>
-                    <span class="role-title">Co-Founder &nbsp;&middot;&nbsp; Director</span>
-                    <p>Co-founder and Director of Prajas Labs. Provides strategic oversight, operational leadership, and a grounding vision rooted in community values — ensuring the company remains true to its core mission of building technology that genuinely serves people.</p>
-                </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -450,12 +238,11 @@
     <div class="container">
         <div class="vision-layout">
             <div class="vision-left fade-in">
-                <div class="eyebrow">Our Vision</div>
                 <h2>Where We<br>Are Headed</h2>
-                <div class="vis-quote">
+                <blockquote class="vis-quote">
                     <p>"Every product, every decision, every line of code — for the people."</p>
                     <cite>— Dinesh Kumar Reddy Narreddy, Co-Founder &amp; CTO</cite>
-                </div>
+                </blockquote>
             </div>
             <div class="vision-right">
                 <div class="vis-item fade-in">
@@ -466,7 +253,7 @@
                     <div class="vis-body">
                         <span class="vis-year">2026 — Now</span>
                         <h3>Foundation &amp; First Products</h3>
-                        <p>Incorporated and building our core product lines across health AI, financial intelligence, computer vision, and personal AI. First products launching soon.</p>
+                        <p>Incorporated and building core product lines across health AI, financial intelligence, computer vision, and personal AI.</p>
                     </div>
                 </div>
                 <div class="vis-item fade-in">
@@ -477,7 +264,7 @@
                     <div class="vis-body">
                         <span class="vis-year">Near Future</span>
                         <h3>Launch, Scale &amp; Partner</h3>
-                        <p>Taking products to market, forming strategic partnerships, growing our team, and expanding our geographic reach into global markets.</p>
+                        <p>Taking products to market, forming strategic partnerships, growing our team, and expanding into global markets.</p>
                     </div>
                 </div>
                 <div class="vis-item fade-in">
@@ -488,7 +275,7 @@
                     <div class="vis-body">
                         <span class="vis-year">Future</span>
                         <h3>New Frontiers</h3>
-                        <p>Entering advanced domains — autonomous systems, precision agriculture AI, media technology, and beyond — guided always by impact on people.</p>
+                        <p>Autonomous systems, precision agriculture AI, media technology, and beyond — guided always by impact on people.</p>
                     </div>
                 </div>
                 <div class="vis-item fade-in">
@@ -498,7 +285,7 @@
                     <div class="vis-body">
                         <span class="vis-year">Long Term</span>
                         <h3>A Global Technology House</h3>
-                        <p>A recognised multi-sector technology company of global calibre — born in Andhra Pradesh, built for the world, and always for the people.</p>
+                        <p>A recognised multi-sector technology company of global calibre — born in Andhra Pradesh, built for the world.</p>
                     </div>
                 </div>
             </div>
@@ -510,14 +297,11 @@
 <section class="cta-section">
     <div class="container">
         <div class="cta-inner fade-in">
-            <div class="cta-blob cta-blob-l"></div>
-            <div class="cta-blob cta-blob-r"></div>
-            <p class="cta-eyebrow">Work With Us</p>
             <h2>Ready to Build<br>the Future Together?</h2>
-            <p class="cta-sub">Whether you're a partner, investor, client, or early adopter — we'd love to connect.</p>
-            <a href="#contact" class="btn-grad">
+            <p>Whether you're a partner, investor, client, or early adopter — we'd love to connect.</p>
+            <a href="#contact" class="btn-primary">
                 Start a Conversation
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
         </div>
     </div>
@@ -528,27 +312,16 @@
     <div class="container">
         <div class="contact-layout">
             <div class="contact-left fade-in">
-                <div class="eyebrow">Contact</div>
                 <h2>Let's Build<br>Together</h2>
                 <p>Whether you are a potential partner, an early user, an investor, or just curious — we would love to hear from you.</p>
                 <div class="contact-details">
                     <div class="cd-item">
-                        <div class="cd-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        </div>
-                        <div>
-                            <h4>Address</h4>
-                            <p>72/272-1-2-15, Dandu Harijanawada,<br>Ravindra Nagar, Cuddapah,<br>Andhra Pradesh — 516003, India</p>
-                        </div>
+                        <span class="cd-label">Address</span>
+                        <p>72/272-1-2-15, Dandu Harijanawada,<br>Ravindra Nagar, Cuddapah,<br>Andhra Pradesh — 516003, India</p>
                     </div>
                     <div class="cd-item">
-                        <div class="cd-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>contact@prajaslabs.com</p>
-                        </div>
+                        <span class="cd-label">Email</span>
+                        <p><a href="mailto:contact@prajaslabs.com">contact@prajaslabs.com</a></p>
                     </div>
                 </div>
             </div>
@@ -581,9 +354,9 @@
                         <label>Message</label>
                         <textarea placeholder="Tell us about your enquiry, idea, or project..." rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn-grad full">
+                    <button type="submit" class="btn-primary full">
                         Send Message
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                     </button>
                     <p id="formNote" class="form-note"></p>
                 </form>
@@ -598,7 +371,7 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img src="logo.svg" alt="Prajas Labs" class="logo-img footer-logo-img" width="72" height="50">
+                    <img src="logo.png" alt="Prajas Labs" class="logo-img footer-logo-img">
                     <div class="logo-text-group">
                         <span class="logo-name">Prajas Labs</span>
                         <span class="logo-sub">For the People</span>

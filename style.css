@@ -39,8 +39,8 @@ body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px);
-    background-size: 32px 32px;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.036) 1px, transparent 1px);
+    background-size: 36px 36px;
     pointer-events: none;
     z-index: 0;
 }
@@ -443,11 +443,11 @@ body::before {
 
 .prod-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .prod-cat {
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: var(--dim);
+    color: #2A3545;
 }
 .prod-badge-live {
     font-size: 0.65rem;

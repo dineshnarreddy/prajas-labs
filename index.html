@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Prajas Labs Private Limited — An Indian AI company building intelligent products in health, finance, computer vision, and personal AI. For the People.">
-    <meta name="theme-color" content="#07090F">
+    <meta name="theme-color" content="#06060C">
     <title>Prajas Labs — For the People</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- Ambient background blobs -->
+<div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+</div>
 
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
@@ -40,9 +47,9 @@
 <!-- HERO -->
 <section id="home" class="hero">
     <div class="hero-text fade-in">
-        <p class="hero-kicker">Prajas Labs Private Limited &nbsp;·&nbsp; Andhra Pradesh, India</p>
-        <h1>Technology<br>Built For<br><span class="hero-grad">the People.</span></h1>
-        <p class="hero-desc">An Indian technology company building intelligent products across artificial intelligence, health, finance, and vision.</p>
+        <p class="hero-kicker">India &nbsp;·&nbsp; Technology &nbsp;·&nbsp; For the People</p>
+        <h1>Built for<br><span class="hero-grad">the people.</span></h1>
+        <p class="hero-desc">We believe the best technology should reach everyone — not just the privileged few. That's why we build across AI, health, finance, and vision.</p>
         <div class="hero-btns">
             <a href="#sectors" class="btn-primary">
                 What We Build
@@ -60,23 +67,23 @@
                   <stop offset="100%" stop-color="#07101C"/>
                 </linearGradient>
                 <radialGradient id="hi-orb" cx="38%" cy="32%" r="68%">
-                  <stop offset="0%" stop-color="#7DD3FC"/>
-                  <stop offset="40%" stop-color="#0EA5E9"/>
-                  <stop offset="100%" stop-color="#0352A0"/>
+                  <stop offset="0%" stop-color="#A5B4FC"/>
+                  <stop offset="40%" stop-color="#5E6AD2"/>
+                  <stop offset="100%" stop-color="#2D3A8C"/>
                 </radialGradient>
                 <radialGradient id="hi-glow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.20"/>
-                  <stop offset="60%" stop-color="#0EA5E9" stop-opacity="0.05"/>
-                  <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0"/>
+                  <stop offset="0%" stop-color="#5E6AD2" stop-opacity="0.20"/>
+                  <stop offset="60%" stop-color="#5E6AD2" stop-opacity="0.05"/>
+                  <stop offset="100%" stop-color="#5E6AD2" stop-opacity="0"/>
                 </radialGradient>
                 <linearGradient id="hi-bar" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#38BDF8"/>
-                  <stop offset="100%" stop-color="#0369A1"/>
+                  <stop offset="0%" stop-color="#818CF8"/>
+                  <stop offset="100%" stop-color="#3730A3"/>
                 </linearGradient>
                 <linearGradient id="hi-wave" x1="0" y1="0" x2="1" y2="0">
                   <stop offset="0%" stop-color="#10B981"/>
-                  <stop offset="55%" stop-color="#0EA5E9"/>
-                  <stop offset="100%" stop-color="#6366F1"/>
+                  <stop offset="55%" stop-color="#5E6AD2"/>
+                  <stop offset="100%" stop-color="#818CF8"/>
                 </linearGradient>
                 <linearGradient id="hi-ai" x1="0" y1="0" x2="1" y2="0">
                   <stop offset="0%" stop-color="#8B5CF6"/>
@@ -88,18 +95,18 @@
               <ellipse cx="250" cy="224" rx="205" ry="170" fill="url(#hi-glow)"/>
 
               <!-- Connection lines — drawn first so cards + orb paint over the endpoints -->
-              <line x1="88" y1="66" x2="250" y2="224" stroke="#0EA5E9" stroke-width="1" stroke-opacity="0.22" stroke-linecap="round"/>
+              <line x1="88" y1="66" x2="250" y2="224" stroke="#5E6AD2" stroke-width="1" stroke-opacity="0.22" stroke-linecap="round"/>
               <line x1="399" y1="128" x2="250" y2="224" stroke="#10B981" stroke-width="1" stroke-opacity="0.22" stroke-linecap="round"/>
               <line x1="130" y1="352" x2="250" y2="224" stroke="#8B5CF6" stroke-width="1" stroke-opacity="0.20" stroke-linecap="round"/>
 
               <!-- CARD A — Analytics / Finance (top-left) -->
               <rect x="8" y="14" width="160" height="104" rx="12" fill="url(#hi-cg)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-              <rect x="9" y="14" width="158" height="3" rx="2" fill="#0EA5E9" opacity="0.88"/>
-              <rect x="20" y="30" width="36" height="6" rx="3" fill="rgba(14,165,233,0.22)"/>
+              <rect x="9" y="14" width="158" height="3" rx="2" fill="#5E6AD2" opacity="0.88"/>
+              <rect x="20" y="30" width="36" height="6" rx="3" fill="rgba(94,106,210,0.22)"/>
               <rect x="62" y="30" width="24" height="6" rx="3" fill="rgba(255,255,255,0.06)"/>
               <rect x="92" y="30" width="16" height="6" rx="3" fill="rgba(255,255,255,0.04)"/>
               <polyline points="20,58 38,48 56,53 74,40 92,46 110,34 128,42 146,38 160,32"
-                fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.60"/>
+                fill="none" stroke="#818CF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.60"/>
               <rect x="20" y="78" width="11" height="28" rx="2" fill="url(#hi-bar)" opacity="0.75"/>
               <rect x="37" y="68" width="11" height="38" rx="2" fill="url(#hi-bar)" opacity="0.85"/>
               <rect x="54" y="73" width="11" height="33" rx="2" fill="url(#hi-bar)" opacity="0.90"/>
@@ -159,18 +166,18 @@
 
               <!-- CENTRAL ORB — drawn last so it sits on top of all lines -->
               <circle cx="250" cy="224" r="80" fill="url(#hi-glow)"/>
-              <circle cx="250" cy="224" r="63" fill="none" stroke="#0EA5E9" stroke-width="0.8" stroke-opacity="0.20" stroke-dasharray="6 5"/>
-              <circle cx="250" cy="224" r="51" fill="#071520" stroke="#0EA5E9" stroke-width="1.3" stroke-opacity="0.38"/>
+              <circle cx="250" cy="224" r="63" fill="none" stroke="#5E6AD2" stroke-width="0.8" stroke-opacity="0.20" stroke-dasharray="6 5"/>
+              <circle cx="250" cy="224" r="51" fill="#0A0A14" stroke="#5E6AD2" stroke-width="1.3" stroke-opacity="0.38"/>
               <circle cx="250" cy="224" r="45" fill="url(#hi-orb)"/>
               <ellipse cx="238" cy="210" rx="14" ry="9" fill="white" opacity="0.17"/>
-              <ellipse cx="250" cy="224" rx="51" ry="13" fill="none" stroke="#38BDF8" stroke-width="0.7" stroke-opacity="0.24" transform="rotate(-20 250 224)"/>
-              <circle cx="250" cy="174" r="4" fill="#38BDF8" opacity="0.70"/>
-              <circle cx="299" cy="237" r="3" fill="#7DD3FC" opacity="0.56"/>
-              <circle cx="206" cy="265" r="2.5" fill="#0EA5E9" opacity="0.46"/>
+              <ellipse cx="250" cy="224" rx="51" ry="13" fill="none" stroke="#818CF8" stroke-width="0.7" stroke-opacity="0.24" transform="rotate(-20 250 224)"/>
+              <circle cx="250" cy="174" r="4" fill="#818CF8" opacity="0.70"/>
+              <circle cx="299" cy="237" r="3" fill="#A5B4FC" opacity="0.56"/>
+              <circle cx="206" cy="265" r="2.5" fill="#5E6AD2" opacity="0.46"/>
 
               <!-- Floating micro tags -->
-              <rect x="204" y="54" width="54" height="9" rx="4.5" fill="rgba(14,165,233,0.09)" stroke="rgba(14,165,233,0.20)" stroke-width="0.8"/>
-              <rect x="208" y="56.5" width="22" height="4" rx="2" fill="rgba(14,165,233,0.42)"/>
+              <rect x="204" y="54" width="54" height="9" rx="4.5" fill="rgba(94,106,210,0.09)" stroke="rgba(94,106,210,0.22)" stroke-width="0.8"/>
+              <rect x="208" y="56.5" width="22" height="4" rx="2" fill="rgba(94,106,210,0.42)"/>
               <rect x="346" y="258" width="58" height="9" rx="4.5" fill="rgba(16,185,129,0.07)" stroke="rgba(16,185,129,0.18)" stroke-width="0.8"/>
               <rect x="350" y="260.5" width="28" height="4" rx="2" fill="rgba(16,185,129,0.32)"/>
               <rect x="272" y="388" width="48" height="9" rx="4.5" fill="rgba(139,92,246,0.07)" stroke="rgba(139,92,246,0.18)" stroke-width="0.8"/>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 168" fill="none">
+
+  <!-- Network connection lines — background layer -->
+  <g stroke-linecap="round">
+    <!-- Primary arc spine -->
+    <line x1="32"  y1="80" x2="56"  y2="55" stroke="#2A9D8F" stroke-width="2"   opacity="0.55"/>
+    <line x1="56"  y1="55" x2="83"  y2="37" stroke="#32A49A" stroke-width="2"   opacity="0.55"/>
+    <line x1="83"  y1="37" x2="108" y2="27" stroke="#3EAABC" stroke-width="2"   opacity="0.55"/>
+    <line x1="108" y1="27" x2="120" y2="23" stroke="#46A0C8" stroke-width="2"   opacity="0.55"/>
+    <line x1="120" y1="23" x2="132" y2="27" stroke="#4A90C4" stroke-width="2"   opacity="0.55"/>
+    <line x1="132" y1="27" x2="157" y2="37" stroke="#6AADD0" stroke-width="2"   opacity="0.55"/>
+    <line x1="157" y1="37" x2="184" y2="55" stroke="#84A9BC" stroke-width="2"   opacity="0.55"/>
+    <line x1="184" y1="55" x2="208" y2="80" stroke="#78909C" stroke-width="2"   opacity="0.55"/>
+    <!-- Skip-one cross connections -->
+    <line x1="32"  y1="80" x2="83"  y2="37" stroke="#2A9D8F" stroke-width="1.2" opacity="0.28"/>
+    <line x1="83"  y1="37" x2="120" y2="23" stroke="#3EAABC" stroke-width="1.2" opacity="0.28"/>
+    <line x1="120" y1="23" x2="157" y2="37" stroke="#4A90C4" stroke-width="1.2" opacity="0.28"/>
+    <line x1="157" y1="37" x2="208" y2="80" stroke="#84A9BC" stroke-width="1.2" opacity="0.28"/>
+    <!-- Inner cross connections -->
+    <line x1="56"  y1="55" x2="108" y2="27" stroke="#32A49A" stroke-width="1"   opacity="0.22"/>
+    <line x1="132" y1="27" x2="184" y2="55" stroke="#6AADD0" stroke-width="1"   opacity="0.22"/>
+  </g>
+
+  <!-- Network nodes -->
+  <circle cx="32"  cy="80" r="5.5" fill="#2A9D8F"/>
+  <circle cx="56"  cy="55" r="5"   fill="#32A49A"/>
+  <circle cx="83"  cy="37" r="6"   fill="#3EAAB8"/>
+  <circle cx="108" cy="27" r="6"   fill="#46A0C8"/>
+  <circle cx="120" cy="23" r="8.5" fill="#4A90C4"/><!-- centre hub -->
+  <circle cx="132" cy="27" r="6"   fill="#60ACD2"/>
+  <circle cx="157" cy="37" r="6"   fill="#80ABBC"/>
+  <circle cx="184" cy="55" r="5"   fill="#84A9BC"/>
+  <circle cx="208" cy="80" r="5.5" fill="#78909C"/>
+
+  <!-- LEFT FIGURE — Amber/Gold, centred x=72 -->
+  <circle cx="72"  cy="102" r="10" fill="#C89A35"/>
+  <line x1="72"  y1="114" x2="50"  y2="96"  stroke="#C89A35" stroke-width="12" stroke-linecap="round"/>
+  <line x1="72"  y1="114" x2="94"  y2="96"  stroke="#C89A35" stroke-width="12" stroke-linecap="round"/>
+  <line x1="72"  y1="114" x2="72"  y2="152" stroke="#C89A35" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- CENTRE FIGURE — Blue, centred x=120 — LARGEST -->
+  <circle cx="120" cy="94"  r="13" fill="#4A90C4"/>
+  <line x1="120" y1="109" x2="90"  y2="88"  stroke="#4A90C4" stroke-width="15" stroke-linecap="round"/>
+  <line x1="120" y1="109" x2="150" y2="88"  stroke="#4A90C4" stroke-width="15" stroke-linecap="round"/>
+  <line x1="120" y1="109" x2="120" y2="152" stroke="#4A90C4" stroke-width="15" stroke-linecap="round"/>
+
+  <!-- RIGHT FIGURE — Steel Gray, centred x=168 -->
+  <circle cx="168" cy="102" r="10" fill="#7B94A5"/>
+  <line x1="168" y1="114" x2="146" y2="96"  stroke="#7B94A5" stroke-width="12" stroke-linecap="round"/>
+  <line x1="168" y1="114" x2="190" y2="96"  stroke="#7B94A5" stroke-width="12" stroke-linecap="round"/>
+  <line x1="168" y1="114" x2="168" y2="152" stroke="#7B94A5" stroke-width="12" stroke-linecap="round"/>
+
+</svg>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Pinged | Prajas Labs</title>
+<meta name="description" content="Privacy Policy for Pinged, the government jobs app by Prajas Labs Private Limited.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f7f4; --paper2:#efefe9; --card:#fff;
+    --ink:#17201d; --body:#4b534e; --muted:#5f6761;
+    --line:#e2e2da; --line-2:#d2d2c7;
+    --blue:#0e6b57; --amber:#8f6a24;
+    --dark:#122420; --dark-text:#edf2ee;
+    --easing:cubic-bezier(.16,1,.3,1);
+    --font-display:'Fraunces', Georgia, serif;
+    --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--body);
+    font-family:var(--font-body); font-size:16px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue)}
+  h1,h2,h3{font-family:var(--font-display); color:var(--ink); font-weight:600; text-wrap:balance}
+
+  .top-nav{
+    position:sticky; top:0; z-index:50; background:rgba(247,247,244,.9);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  }
+  .top-nav .inner{
+    max-width:1080px; margin:0 auto; padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{font-family:var(--font-display); font-weight:600; font-size:1.05rem; color:var(--ink); text-decoration:none}
+  .brand span{color:var(--blue)}
+  .back-link{font-size:.9rem; color:var(--muted); text-decoration:none; display:flex; align-items:center; gap:6px}
+  .back-link:hover{color:var(--blue)}
+
+  .hero{max-width:1080px; margin:0 auto; padding:56px 24px 32px}
+  .eyebrow{
+    font-family:var(--font-body); font-weight:600; font-size:.75rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--blue); margin:0 0 14px;
+  }
+  .hero h1{font-size:clamp(2rem, 4vw, 2.75rem); line-height:1.15; margin:0 0 14px}
+  .hero p.lede{font-size:1.1rem; color:var(--body); max-width:640px; margin:0 0 28px}
+
+  .meta-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+    gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden;
+  }
+  .meta-item{background:var(--card); padding:16px 18px}
+  .meta-item .label{font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:4px}
+  .meta-item .value{font-size:.92rem; color:var(--ink); font-weight:500}
+
+  .layout{max-width:1080px; margin:0 auto; padding:8px 24px 80px; display:grid; grid-template-columns:220px 1fr; gap:48px}
+  @media (max-width:820px){ .layout{grid-template-columns:1fr} .toc{display:none} }
+
+  .toc{position:sticky; top:80px; align-self:start; padding:20px 0}
+  .toc .toc-label{font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:10px}
+  .toc ol{list-style:none; margin:0; padding:0; counter-reset:toc}
+  .toc li{counter-increment:toc; margin-bottom:8px}
+  .toc a{
+    display:flex; gap:8px; font-size:.88rem; color:var(--muted); text-decoration:none; line-height:1.4;
+  }
+  .toc a::before{content:counter(toc, decimal-leading-zero); color:var(--line-2); font-variant-numeric:tabular-nums; flex-shrink:0}
+  .toc a:hover{color:var(--blue)}
+
+  .content section{padding:28px 0; border-bottom:1px solid var(--line)}
+  .content section:last-child{border-bottom:none}
+  .content h2{font-size:1.4rem; margin:0 0 14px; scroll-margin-top:88px}
+  .content p{margin:0 0 14px}
+  .content ul{margin:0 0 14px; padding-left:20px}
+  .content li{margin-bottom:8px}
+  .content strong{color:var(--ink)}
+
+  .callout{
+    background:var(--paper2); border:1px solid var(--line); border-left:3px solid var(--blue);
+    border-radius:8px; padding:16px 18px; margin:16px 0; font-size:.95rem;
+  }
+  .callout strong{color:var(--blue)}
+
+  table{width:100%; border-collapse:collapse; margin:12px 0 18px; font-size:.92rem}
+  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line)}
+  th{color:var(--muted); font-weight:600; font-size:.78rem; text-transform:uppercase; letter-spacing:.04em}
+  td{color:var(--body)}
+  .tbl-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:8px}
+  .tbl-wrap table{margin:0; border:none}
+  .tbl-wrap tr:last-child td{border-bottom:none}
+
+  footer{background:var(--dark); border-top:1px solid rgba(237,242,238,.08); color:var(--dark-text); padding:40px 24px}
+  footer .inner{max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px; font-size:.85rem}
+  footer .company{opacity:.7; line-height:1.6}
+  footer a{color:var(--dark-text); opacity:.85}
+  footer a:hover{opacity:1}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="inner">
+    <a class="brand" href="/">Prajas<span>Labs</span></a>
+    <a class="back-link" href="/">&larr; Back to Prajas Labs</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow">Privacy Policy</p>
+  <h1>Pinged — Government Jobs App</h1>
+  <p class="lede">Pinged is built to work without collecting who you are. This page explains, in plain terms, exactly what data moves where — and what never leaves your phone.</p>
+
+  <div class="meta-grid">
+    <div class="meta-item"><div class="label">Effective Date</div><div class="value">August 3, 2026</div></div>
+    <div class="meta-item"><div class="label">Data Controller</div><div class="value">Prajas Labs Private Limited</div></div>
+    <div class="meta-item"><div class="label">Applies To</div><div class="value">Pinged (com.pinged.jobs)</div></div>
+    <div class="meta-item"><div class="label">Contact</div><div class="value"><a href="mailto:contact@prajaslabs.com">contact@prajaslabs.com</a></div></div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="toc">
+    <div class="toc-label">On this page</div>
+    <ol>
+      <li><a href="#who-we-are">Who We Are</a></li>
+      <li><a href="#how-it-works">How Pinged Works</a></li>
+      <li><a href="#data-we-collect">Data We Collect</a></li>
+      <li><a href="#data-on-device">Data That Stays On Your Device</a></li>
+      <li><a href="#what-server-sees">What Our Server Sees</a></li>
+      <li><a href="#third-parties">Third-Party Services</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#permissions">App Permissions</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#rights">Your Rights &amp; Choices</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </aside>
+
+  <main class="content">
+    <section id="who-we-are">
+      <h2>1. Who We Are</h2>
+      <p><strong>Prajas Labs Private Limited</strong> (CIN: U62099AP2026PTC126173) is an Indian technology company based in Cuddapah, Andhra Pradesh. We build <strong>Pinged</strong>, a free mobile app that aggregates government job notifications from official sources across India (UPSC, SSC, Railways, Banking, Defence, State PSCs, and more) into a single, searchable feed.</p>
+    </section>
+
+    <section id="how-it-works">
+      <h2>2. How Pinged Works</h2>
+      <p>Pinged does not use accounts, sign-ups, or logins of any kind. It works like a radio broadcast, not a two-way service:</p>
+      <ul>
+        <li>Our server continuously collects public government job notifications and downloads the full, current list to your app.</li>
+        <li>Your phone stores your preferences (qualification, state, category, etc.) locally, and uses your phone's own processing power to filter that list down to what's relevant to you.</li>
+        <li>Your preferences are never transmitted to our server. We have no way of knowing what job categories or filters you've set.</li>
+      </ul>
+      <div class="callout"><strong>In short:</strong> the server broadcasts public job data outward; nothing personal comes back.</div>
+    </section>
+
+    <section id="data-we-collect">
+      <h2>3. Data We Collect</h2>
+      <p>We do not collect, request, or store any personally identifiable information. Pinged has no registration, no login, no user profile stored on our servers, and no in-app tracking of individual users.</p>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Category</th><th>Collected?</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Name, email, phone number</td><td>No</td><td>No account system exists in the app.</td></tr>
+            <tr><td>Location (GPS)</td><td>No</td><td>State/district filters are chosen manually by you.</td></tr>
+            <tr><td>Device identifiers / advertising ID</td><td>No</td><td>The app contains no advertising or analytics SDKs.</td></tr>
+            <tr><td>Usage analytics / crash reports</td><td>No</td><td>No third-party analytics library is integrated.</td></tr>
+            <tr><td>Job search preferences</td><td>No (stored locally only)</td><td>Kept on your device; never sent to our server.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="data-on-device">
+      <h2>4. Data That Stays On Your Device</h2>
+      <p>To personalize which jobs are shown to you, Pinged stores the following <strong>only on your phone</strong>, using your device's local storage. This data is never uploaded, synced, or transmitted anywhere:</p>
+      <ul>
+        <li>Your selected qualification level, degree/stream, and (if applicable) teaching subject</li>
+        <li>Your selected state and job category preferences</li>
+        <li>Your saved/bookmarked jobs</li>
+      </ul>
+      <p>Uninstalling the app permanently deletes this data — we hold no copy of it.</p>
+    </section>
+
+    <section id="what-server-sees">
+      <h2>5. What Our Server Sees</h2>
+      <p>When Pinged fetches the latest job list, our server receives only standard, anonymous technical request information common to any internet connection (such as your IP address, handled automatically by our hosting infrastructure for routing and abuse prevention). We do not log this against any user identity because no user identity exists in our system.</p>
+    </section>
+
+    <section id="third-parties">
+      <h2>6. Third-Party Services</h2>
+      <p>Pinged does not integrate any third-party advertising networks, analytics platforms, or social login providers. Job "Apply" links open the official government website or notification PDF directly in your browser — at that point, the respective government website's own privacy policy applies, not ours.</p>
+    </section>
+
+    <section id="security">
+      <h2>7. Security</h2>
+      <p>All communication between the app and our server is encrypted using HTTPS/TLS. Because we do not collect personal data, there is no user account database that could be exposed in the event of a security incident.</p>
+    </section>
+
+    <section id="permissions">
+      <h2>8. App Permissions</h2>
+      <p>Pinged requests only the minimum permission needed to function: <strong>internet access</strong>, to download the current job list. It does not request access to contacts, camera, microphone, storage, location, or SMS.</p>
+    </section>
+
+    <section id="children">
+      <h2>9. Children's Privacy</h2>
+      <p>Pinged is intended for job-seeking adults and does not knowingly collect data from children under 13, in line with the fact that the app collects no personal data from any user regardless of age.</p>
+    </section>
+
+    <section id="rights">
+      <h2>10. Your Rights &amp; Choices</h2>
+      <p>Because Pinged stores your preferences only on your device, you are always in control:</p>
+      <ul>
+        <li><strong>Change or clear preferences:</strong> update them anytime from the app's profile screen.</li>
+        <li><strong>Delete all local data:</strong> uninstall the app, or clear its storage/cache from your device's app settings.</li>
+        <li><strong>Access requests:</strong> since we hold no personal data on our servers, there is nothing for us to provide, correct, or delete on our end.</li>
+      </ul>
+    </section>
+
+    <section id="changes">
+      <h2>11. Changes to This Policy</h2>
+      <p>If our data practices ever change — for example, if we introduce optional accounts in the future — we will update this page and revise the "Effective Date" above before the change takes effect in the app.</p>
+    </section>
+
+    <section id="contact">
+      <h2>12. Contact Us</h2>
+      <p>Questions about this policy or Pinged's data practices can be sent to:</p>
+      <p><strong>Prajas Labs Private Limited</strong><br>
+      72/272-1-2-15, Dandu Harijanawada, Ravindra Nagar,<br>
+      Cuddapah, Andhra Pradesh — 516003, India<br>
+      Email: <a href="mailto:contact@prajaslabs.com">contact@prajaslabs.com</a></p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="inner">
+    <div class="company">
+      Prajas Labs Private Limited &middot; CIN U62099AP2026PTC126173<br>
+      Cuddapah, Andhra Pradesh, India
+    </div>
+    <div>
+      <a href="/">prajaslabs.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

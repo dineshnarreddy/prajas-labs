@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.govstep.jobs",
+      "sha256_cert_fingerprints": [
+        "9A:8F:3D:4D:B6:23:C9:75:3D:2A:AE:E2:58:E0:DE:A7:45:7B:0D:3C:8F:75:1F:38:5A:A3:27:DB:CE:3B:50:B2"
+      ]
+    }
+  }
+]

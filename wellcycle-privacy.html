@@ -5,7 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WellCycle360 Privacy Policy — Prajas Labs Private Limited. Your health data stays on your device. No cloud storage of personal health information.">
     <title>WellCycle360 — Privacy Policy | Prajas Labs</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Self-contained styles (the old shared style.css was removed in the Next.js migration). */
+      :root{ --bg:#0a0d14; --bg2:#0e121c; --surface:#141926; --b:rgba(255,255,255,.09);
+        --hi:#f3f6fb; --text:#c4cdda; --dim:#8a94a6; --c3:#38bdf8; --r:10px; --rl:16px; }
+      *{ box-sizing:border-box; margin:0; padding:0; }
+      html{ scroll-behavior:smooth; }
+      body{ font-family:'Inter',system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--text);
+        line-height:1.7; -webkit-font-smoothing:antialiased; }
+      a{ color:var(--c3); text-decoration:none; }
+      .container{ max-width:1080px; margin:0 auto; padding:0 24px; }
+      h1,h2,h3,h4{ color:var(--hi); line-height:1.25; }
+      .navbar{ position:sticky; top:0; z-index:50; background:rgba(10,13,20,.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--b); }
+      .nav-container{ max-width:1080px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+      .nav-logo{ display:flex; align-items:center; gap:10px; }
+      .logo-mark{ width:38px; height:38px; border-radius:9px; background:linear-gradient(135deg,#38bdf8,#6366f1); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.95rem; }
+      .logo-text-group{ display:flex; flex-direction:column; line-height:1.1; }
+      .logo-name{ color:var(--hi); font-weight:700; font-size:1rem; }
+      .logo-sub{ color:var(--dim); font-size:.72rem; }
+      .nav-links{ list-style:none; display:flex; align-items:center; gap:24px; }
+      .nav-links a{ color:var(--text); font-size:.92rem; font-weight:500; }
+      .nav-links a:hover{ color:var(--hi); }
+      .nav-btn{ background:var(--c3); color:#06121c!important; padding:8px 16px; border-radius:999px; font-weight:600; }
+      .hamburger{ display:none; }
+      .eyebrow{ display:inline-block; font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--c3); }
+      .subtitle{ color:var(--text); font-size:1.05rem; max-width:62ch; margin-top:8px; }
+      .footer{ border-top:1px solid var(--b); background:var(--bg2); margin-top:60px; padding:48px 0 32px; }
+      .footer-top{ display:flex; flex-wrap:wrap; gap:40px; justify-content:space-between; }
+      .footer-brand p{ color:var(--dim); margin-top:12px; font-size:.9rem; }
+      .footer-logo{ display:flex; align-items:center; gap:10px; }
+      .footer-cols{ display:flex; flex-wrap:wrap; gap:40px; }
+      .fcol h4{ color:var(--hi); font-size:.9rem; margin-bottom:12px; }
+      .fcol a{ display:block; color:var(--dim); font-size:.88rem; margin-bottom:8px; }
+      .fcol a:hover{ color:var(--c3); }
+      .flegal{ color:var(--dim); font-size:.8rem; }
+      .footer-bottom{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; border-top:1px solid var(--b); margin-top:32px; padding-top:20px; color:var(--dim); font-size:.82rem; }
+      @media(max-width:768px){ .nav-links{ gap:14px; font-size:.85rem; } .footer-top{ flex-direction:column; } }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -460,7 +496,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

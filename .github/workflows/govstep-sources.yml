@@ -1,0 +1,46 @@
+# Refreshes prajaslabs.com/govstep/sources/ every morning from the GovStep server (owner OK 2026-11-03).
+# Touches ONLY govstep/sources/index.html. Runs after GovStep's morning run (06:20 IST self-check).
+name: GovStep sources page
+
+on:
+  schedule:
+    - cron: "0 1 * * *"   # 01:00 UTC = 06:30 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: govstep-sources
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      TARGET: govstep/sources/index.html
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download and check the list
+        run: |
+          set -euo pipefail
+          curl -fsS --retry 3 --retry-delay 20 --max-time 60 \
+            https://naukrisetu-backend-production.up.railway.app/sources -o /tmp/sources.html
+          # safety: it is the real page, it is not suspiciously short, and it carries no personal names
+          grep -q "<title>Source Websites" /tmp/sources.html
+          n=$(grep -o "<li" /tmp/sources.html | wc -l)
+          echo "sites listed: $n"
+          [ "$n" -ge 200 ] || { echo "too few sites ($n) - not publishing"; exit 1; }
+          if grep -qiE "dinesh|amamohan|dineshlazer" /tmp/sources.html; then echo "personal name found - not publishing"; exit 1; fi
+          cp /tmp/sources.html "$TARGET"
+
+      - name: Publish if changed
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- "$TARGET"; then echo "no change"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$TARGET"
+          git commit -m "govstep sources: daily refresh"
+          git push

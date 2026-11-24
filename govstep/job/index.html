@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>A job was shared with you &mdash; GovStep</title>
+<meta name="description" content="Open this government job in GovStep: eligibility, last date and the official apply link.">
+<meta property="og:title" content="A government job was shared with you">
+<meta property="og:description" content="Open it in GovStep to check eligibility and apply on the official website.">
+<meta property="og:site_name" content="GovStep">
+<style>
+  :root{--ink:#141a17;--body:#3d453f;--muted:#6b736c;--line:#e3e6e1;--paper:#fafaf7;--accent:#0e6b57;--brand:#E65100}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;line-height:1.6}
+  .wrap{max-width:560px;margin:0 auto;padding:40px 16px 64px}
+  .eyebrow{color:var(--accent);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 10px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 18px;margin:12px 0 20px}
+  h1{color:var(--ink);font-size:1.3rem;line-height:1.35;margin:0 0 6px;text-wrap:balance;overflow-wrap:anywhere}
+  .board{color:var(--muted);margin:0 0 14px;overflow-wrap:anywhere}
+  .facts{display:flex;flex-wrap:wrap;margin:0 -8px -8px 0;padding:0;list-style:none}
+  .facts li{margin:0 8px 8px 0;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.88rem;color:var(--ink);font-variant-numeric:tabular-nums}
+  .lead{color:var(--ink);font-size:1rem;margin:0 0 16px}
+  .btn{display:block;text-align:center;text-decoration:none;font-weight:700;border-radius:10px;padding:14px 16px;margin:0 0 12px;font-size:1rem}
+  .btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .primary{background:var(--brand);color:#fff}
+  .secondary{background:#fff;color:var(--brand);border:1.5px solid var(--brand)}
+  .note{color:var(--muted);font-size:.85rem;margin:16px 0 0}
+  .note a{color:var(--accent)}
+  .skeleton{height:1.1rem;border-radius:4px;background:var(--line);margin:6px 0}
+  [hidden]{display:none !important}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">GovStep &middot; shared job</p>
+
+  <div class="card" id="card" aria-live="polite">
+    <div id="loading"><div class="skeleton" style="width:85%"></div><div class="skeleton" style="width:55%"></div></div>
+    <div id="job" hidden>
+      <h1 id="title"></h1>
+      <p class="board" id="board"></p>
+      <ul class="facts" id="facts"></ul>
+    </div>
+    <div id="gone" hidden>
+      <h1>This job is no longer open</h1>
+      <p class="board">Its last date has passed or the recruiter withdrew it. GovStep shows the jobs that are open now.</p>
+    </div>
+    <div id="unknown" hidden>
+      <h1>A government job was shared with you</h1>
+      <p class="board">Open it in GovStep to see the details.</p>
+    </div>
+  </div>
+
+  <p class="lead" id="lead">See who can apply, the last date and the official apply link in the GovStep app &mdash; free, no account needed.</p>
+
+  <a class="btn primary" id="open" href="#">Open in GovStep</a>
+  <a class="btn secondary" id="play" href="https://play.google.com/store/apps/details?id=com.govstep.jobs">Get GovStep on Google Play</a>
+
+  <p class="note" id="notAndroid" hidden>GovStep is an Android app. Open this link on your Android phone, or install GovStep from Google Play.</p>
+  <p class="note">GovStep is an independent app, not affiliated with any government. It never asks for money or OTPs. <a href="/govstep/privacy/">Privacy policy</a></p>
+</main>
+<script>
+(function () {
+  var API = 'https://naukrisetu-backend-production.up.railway.app/api/sync/share/';
+  var PKG = 'com.govstep.jobs';
+  var UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  var id = (new URLSearchParams(location.search).get('id') || '').trim().toLowerCase();
+  if (!UUID.test(id)) id = '';
+
+  var android = /android/i.test(navigator.userAgent);
+  // Play passes the job id to the app on its first launch (Install Referrer).
+  var play = 'https://play.google.com/store/apps/details?id=' + PKG +
+    (id ? '&referrer=' + encodeURIComponent('utm_source=govstep_share&govstep_job=' + id) : '');
+  var openBtn = document.getElementById('open');
+  var playBtn = document.getElementById('play');
+  playBtn.href = play;
+
+  if (android) {
+    // Installed: GovStep opens on this job and this page goes to the background.
+    // Not installed: nothing can open the link, the page stays visible, and after
+    // a moment we go to Play (with the job id). Chrome's own "fallback URL" for
+    // missing apps was blocked in testing (Chrome 69 and current), so it is not used.
+    openBtn.href = play;                       // without JavaScript: straight to Play
+    openBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var left = false;
+      function away() { left = true; }
+      document.addEventListener('visibilitychange', function () { if (document.hidden) away(); });
+      window.addEventListener('pagehide', away);
+      window.addEventListener('blur', away);
+      location.href = 'intent://job/' + id + '#Intent;scheme=govstep;end';
+      setTimeout(function () { if (!left && !document.hidden) location.href = play; }, 1600);
+    });
+  } else {
+    openBtn.hidden = true;
+    document.getElementById('notAndroid').hidden = false;
+  }
+
+  function show(which) {
+    ['loading', 'job', 'gone', 'unknown'].forEach(function (k) {
+      document.getElementById(k).hidden = (k !== which);
+    });
+  }
+  function fmtDate(d) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(d || '');
+    if (!m) return null;
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return Number(m[3]) + ' ' + months[Number(m[2]) - 1] + ' ' + m[1];
+  }
+  function fact(text) {
+    var li = document.createElement('li');
+    li.textContent = text;
+    document.getElementById('facts').appendChild(li);
+  }
+
+  if (!id) { show('unknown'); return; }
+  // One retry: a phone on a weak connection should still see the job's title.
+  function load(triesLeft) {
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 12000);
+    return fetch(API + id, ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) {
+        clearTimeout(timer);
+        if (r.status === 404) return 'gone';
+        if (!r.ok) throw new Error(String(r.status));
+        return r.json();
+      })
+      .catch(function (e) {
+        clearTimeout(timer);
+        if (triesLeft > 0) {
+          return new Promise(function (res) { setTimeout(res, 1500); }).then(function () { return load(triesLeft - 1); });
+        }
+        throw e;
+      });
+  }
+  load(1)
+    .then(function (j) {
+      if (j === 'gone') {
+        show('gone');
+        openBtn.textContent = 'See open jobs in GovStep';
+        return;
+      }
+      document.getElementById('title').textContent = j.title || 'Government job';
+      document.getElementById('board').textContent = j.board || '';
+      var last = fmtDate(j.last_date);
+      if (last) fact('Last date: ' + last);
+      if (j.vacancies) fact(Number(j.vacancies).toLocaleString('en-IN') + ' posts');
+      if (j.states && j.states.length && j.states.length <= 3) fact(j.states.join(', '));
+      document.title = (j.title || 'Shared job') + ' — GovStep';
+      show('job');
+    })
+    .catch(function () { show('unknown'); });
+})();
+</script>
+</body>
+</html>
